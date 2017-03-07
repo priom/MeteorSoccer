@@ -1,0 +1,26 @@
+<head>
+  <title>Soccer</title>
+</head>
+
+<body>
+    <h1>Welcome to SoccerPlayers!</h1>
+    {{> SoccerPlayers }}
+</body>
+
+<template name="SoccerPlayers">
+    <h2>List of Players</h2>
+
+    <ul>
+        {{#each player in players}}
+            <li>
+                Name: {{player.name}} <br>
+                Position: {{player.position}} <br>
+                Jersey Number: {{player.jerseyNumber}} <br>
+                Total Goals for the Season:  <br>
+                % of Goals Scored during Wins:  <br>
+                % of Goals Scored during Losses:  <br>
+            </li>
+            <br>
+        {{/each}}
+    </ul>
+</template>
