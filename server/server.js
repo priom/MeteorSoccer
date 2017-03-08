@@ -10,10 +10,9 @@ import { PlayerStatData } from '/server/playerStatData';
 Meteor.startup(() => {
     _.each(SoccerPlayerData.players, function (p) {
        SoccerPlayers.upsert({
-          _id: p._id
+           name: p.name
        }, {
            $set: {
-               id: p._id,
                name: p.name,
                position: p.position,
                jerseyNumber: p.jerseyNumber
@@ -29,14 +28,13 @@ Meteor.startup(() => {
 
     _.each(GameStatData.games, function (g) {
         GameStats.upsert({
-            _id: g._id
+            date: g.date
         }, {
             $set: {
-                _id: g._id,
                 date: g.date,
                 opponent: g.opponent,
                 winOrLose: g.winOrLose,
-                score: g.score
+                score: g.score,
             }
         }, function (error, result) {
             if (error) {
@@ -49,21 +47,11 @@ Meteor.startup(() => {
 
     _.each(PlayerStatData.playerStat, function (s) {
         PlayerStats.upsert({
-            // _id: s._id
-            soccerPlayer: s.soccerPlayer
+            soccerPlayer: s.soccerPlayer,
         }, {
             $set: {
-                // _id: s._id,
-                // name: s.name,
-                // position: s.position,
-                // jerseyNumber: s.jerseyNumber,
-                // gameDate: s.gameDate,
-                // opponent: s.opponent,
-                // winOrLose: s.winOrLose,
-                // gameScore: s.gameScore,
-                // goals: s.goals
                 soccerPlayer: s.soccerPlayer,
-                gameStat: s.gameStat,
+                gameStat: [s.gameStat],
                 playerGoals: s.playerGoals
             }
         }, function (error, result) {

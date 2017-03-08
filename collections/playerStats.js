@@ -10,45 +10,16 @@ import { GameStatsSchema } from '/collections/gameStats';
 export const PlayerStats = new Mongo.Collection('playerStats');
 
 // create new schema for the collection
-const PlayerStatsSchema = new SimpleSchema({
-    // _id: {
-    //     type: SoccerPlayersSchema._id
-    // },
-    // name: {
-    //     type: SoccerPlayersSchema.name
-    // },
-    // position: {
-    //     type: SoccerPlayersSchema.position
-    // },
-    // jerseyNumber: {
-    //     type: SoccerPlayersSchema.jerseyNumber
-    // },
+export const PlayerStatsSchema = new SimpleSchema({
     soccerPlayer: {
         type: SoccerPlayersSchema
     },
     gameStat: {
-        type: GameStatsSchema,
+        type: [GameStatsSchema],
     },
     playerGoals: {
         type: Number
     }
-
-    // gameDate: {
-    //     type: GameStatsSchema.date
-    // },
-    // opponent: {
-    //     type: GameStatsSchema.opponent
-    // },
-    // winOrLose: {
-    //     type: GameStatsSchema.winOrLose
-    // },
-    // gameScore: {
-    //     type: GameStatsSchema.score
-    // },
-    // goals: {
-    //     type: Number,
-    //     label: "Goals"
-    // }
 });
 
 // attach schema to the collection
