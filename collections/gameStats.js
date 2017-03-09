@@ -8,12 +8,12 @@ export const GameStats = new Mongo.Collection('gameStats');
 
 // create new schema for the collection
 export const GameStatsSchema = new SimpleSchema({
+    _id: {
+        type: Number
+    },
     date: {
         type: Date,
         label: "Date of Match",
-        autoValue: function() {
-            return new Date();
-        }
     },
     opponent: {
         type: String,

@@ -15,11 +15,11 @@ export const PlayerStatsSchema = new SimpleSchema({
         type: SoccerPlayersSchema
     },
     gameStat: {
-        type: [GameStatsSchema],
+        type: [GameStatsSchema]
     },
-    playerGoals: {
+    "gameStat.$.playerGoals": {
         type: Number
-    }
+    },
 });
 
 // attach schema to the collection

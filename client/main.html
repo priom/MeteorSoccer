@@ -16,14 +16,14 @@
                 Name: {{player.soccerPlayer.name}} <br>
                 Position: {{player.soccerPlayer.position}} <br>
                 Jersey Number: {{player.soccerPlayer.jerseyNumber}} <br>
-                Total Goals for the Season:  <br>
-                % of Goals Scored during Wins:  <br>
-                % of Goals Scored during Losses:  <br>
+                Total Goals for the Season: {{players.totalGoals}} <br>
+                <!--% of Goals Scored during Wins: {{}}  <br>-->
+                <!--% of Goals Scored during Losses: {{}} <br>-->
             </li>
             <br>
         {{/each}}
     </ul>
 
-    <h1>Add New Player</h1>
+    <h1>Add New Record</h1>
     {{> quickForm collection=getCollection id="insertPlayer" type="insert" }}
 </template>
