@@ -21,8 +21,6 @@ Template.SoccerPlayers.helpers({
     getCollection() {
         return PlayerStats;
     },
-    totalGoals() {
 
-    }
 });
 

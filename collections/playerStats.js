@@ -15,11 +15,31 @@ export const PlayerStatsSchema = new SimpleSchema({
         type: SoccerPlayersSchema
     },
     gameStat: {
-        type: [GameStatsSchema]
+        type: [GameStatsSchema],
     },
     "gameStat.$.playerGoals": {
         type: Number
     },
+    // totalGoals: {
+    //     type: Number,
+    //     autoValue: function () {
+    //         var goals = this.field("playerGoals");
+    //         var total = 0;
+    //         for(var i=0; i<4; i++) {
+    //             total += goals
+    //             return total;
+    //         }
+    //     },
+    //     autoform: {
+    //         afFieldInput: {
+    //             type: "hidden"
+    //         },
+    //         afFormGroup: {
+    //             label: false
+    //         }
+    //     },
+    //     optional: true
+    // }
 });
 
 // attach schema to the collection
