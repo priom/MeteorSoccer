@@ -8,6 +8,15 @@ import { PlayerStats } from '/collections/playerStats';
 import './main.html';
 
 
+Meteor.call('byPlayerGoals', function (error, result) {
+   if (error) {
+       console.log(error);
+   } else {
+       console.log(result[0].total_goals);
+   }
+});
+
+
 // subscribe data to display to the client
 Template.SoccerPlayers.onCreated(function () {
    this.subscribe('playerStats');
@@ -21,6 +30,15 @@ Template.SoccerPlayers.helpers({
     getCollection() {
         return PlayerStats;
     },
+
+    // 'sum': function () {
+    //     var sum = 0;
+    //     var cursor = PlayerStats.find();
+    //     cursor.forEach(function (transaction) {
+    //         sum = sum + transaction.gameStat.$.playerGoals
+    //     });
+    //     return sum;
+    // }
 
 });
 
