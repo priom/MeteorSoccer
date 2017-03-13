@@ -9,7 +9,7 @@ import { GameStatsSchema } from '/collections/gameStats';
 // Mongo.Collection is a new way in meteor; it is the same as Meteor.Collection
 export const PlayerStats = new Mongo.Collection('playerStats');
 
-// create new schema for the collection
+// create and export new schema for the collection
 export const PlayerStatsSchema = new SimpleSchema({
     soccerPlayer: {
         type: SoccerPlayersSchema
@@ -19,27 +19,7 @@ export const PlayerStatsSchema = new SimpleSchema({
     },
     "gameStat.$.playerGoals": {
         type: Number
-    },
-    // totalGoals: {
-    //     type: Number,
-    //     autoValue: function () {
-    //         var goals = this.field("playerGoals");
-    //         var total = 0;
-    //         for(var i=0; i<4; i++) {
-    //             total += goals
-    //             return total;
-    //         }
-    //     },
-    //     autoform: {
-    //         afFieldInput: {
-    //             type: "hidden"
-    //         },
-    //         afFormGroup: {
-    //             label: false
-    //         }
-    //     },
-    //     optional: true
-    // }
+    }
 });
 
 // attach schema to the collection

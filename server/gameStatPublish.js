@@ -4,11 +4,10 @@
 
 import { GameStats } from '/collections/gameStats';
 
-
+//publish collection to the server
 Meteor.publish('gameStats', () => {
     return GameStats.find({}, {
         fields: {
-            // _id: 1,
             date: 1,
             opponent: 1,
             winOrLose: 1,

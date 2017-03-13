@@ -4,11 +4,10 @@
 
 import { SoccerPlayers } from '/collections/soccerPlayers';
 
-
+//publish collection to the server
 Meteor.publish('soccerPlayers', () => {
     return SoccerPlayers.find({}, {
        fields: {
-           // _id: 1,
            name: 1,
            position: 1,
            jerseyNumber: 1,

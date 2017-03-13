@@ -7,6 +7,10 @@
     {{> SoccerPlayers }}
 </body>
 
+<template name="stats">
+    <h1>Hello</h1>
+</template>
+
 <template name="SoccerPlayers">
     <h2>List of Players</h2>
 
@@ -16,14 +20,20 @@
                 Name: {{player.soccerPlayer.name}} <br>
                 Position: {{player.soccerPlayer.position}} <br>
                 Jersey Number: {{player.soccerPlayer.jerseyNumber}} <br>
-                Total Goals for the Season: {{player.totalGoals}} <br>
-                <!--% of Goals Scored during Wins: {{}}  <br>-->
+                <!--Total Goals: {{player.goal}} <br>-->
+                <!--% of Goals Scored during Wins:  <br>-->
                 <!--% of Goals Scored during Losses: {{}} <br>-->
             </li>
             <br>
+        {{/each}}
+    </ul>
+    <ul>
+        {{#each goals}}
+            <li>{{this}}</li>
         {{/each}}
     </ul>
 
     <h1>Add New Record</h1>
     {{> quickForm collection=getCollection id="insertPlayer" type="insert" }}
 </template>
+

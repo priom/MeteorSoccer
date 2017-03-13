@@ -6,11 +6,8 @@
 // Mongo.Collection is a new way in meteor; it is the same as Meteor.Collection
 export const SoccerPlayers = new Mongo.Collection('soccerPlayers');
 
-// create new schema for the collection
+// create and export new schema for the collection
 export const SoccerPlayersSchema = new SimpleSchema({
-    // _id: {
-    //     type: Number
-    // },
     name: {
        type: String,
        label: "Name"
